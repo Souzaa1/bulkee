@@ -2,7 +2,7 @@
 
 import Aurora from "@/components/reactbits/Aurora";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import {
   DropdownMenu,
@@ -48,28 +48,13 @@ export default function Home() {
   const dark = theme === "dark";
 
   return (
-    <div className="h-screen">
+    <div className="h-screen relative">
       <Aurora speed={1.5} colorStops={["#d3fa85", "#aef129", "#d3fa85"]} />
-      <svg className="absolute inset-0 z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(40%_80%_at_center,black,transparent)]">
-        <defs>
-          <pattern
-            id="cta"
-            width="80"
-            height="80"
-            x="50%"
-            y="-1"
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none"></path>
-          </pattern>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth="0"
-          fill="url(#cta)"
-        ></rect>
-      </svg>
+        <div className="absolute inset-0">
+          <div className="relative h-full w-full bg-red [&>div]:absolute [&>div]:h-full [&>div]:w-full [&>div]:bg-[radial-gradient(#333842_1px,transparent_1px)] [&>div]:[background-size:16px_16px] [&>div]:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+            <div></div>
+        </div>
+      </div>
       <Card className="h-[450px] w-[350px] absolute left-1/2 top-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 transform flex-col border-none">
         <CardHeader className="flex flex-col items-center">
           {dark ? (
